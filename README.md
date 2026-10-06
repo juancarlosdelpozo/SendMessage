@@ -4,7 +4,7 @@ Aplicación Android desarrollada en Kotlin para la asignatura DEINT.
 
 ## Descripción
 
-SendMessage permite al usuario introducir un mensaje en una primera Activity y enviarlo a una segunda Activity, donde se muestra el texto recibido.
+SendMessage permite al usuario introducir el nombre de un remitente y un mensaje en una primera Activity. Los datos se almacenan en un objeto `Message`, que contiene un objeto `Person`, y se envían mediante un `Intent` a una segunda Activity, donde se muestran el remitente y el texto recibido.
 
 ## Tecnologías utilizadas
 
@@ -19,13 +19,14 @@ SendMessage permite al usuario introducir un mensaje en una primera Activity y e
 
 ## Funcionamiento
 
-1. El usuario introduce un mensaje.
+1. El usuario introduce el nombre del remitente y un mensaje.
 2. Pulsa el botón **Enviar**.
-3. `SendActivity` recoge el texto introducido.
-4. Se crea un `Intent`.
-5. El mensaje se envía mediante `putExtra`.
-6. `ViewActivity` recibe el mensaje.
-7. El mensaje se muestra en pantalla.
+3. `SendActivity` recoge los datos introducidos.
+4. Se crea un objeto `Person` con el nombre del remitente.
+5. Se crea un objeto `Message` que contiene el texto y el objeto `Person`.
+6. El objeto `Message` se envía mediante un `Intent` usando `putExtra`.
+7. `ViewActivity` recupera el objeto serializable.
+8. Se muestran en pantalla el remitente y el mensaje.
 
 ## Estructura principal
 
@@ -33,6 +34,8 @@ SendMessage permite al usuario introducir un mensaje en una primera Activity y e
 - `ViewActivity.kt`: recibe y muestra el mensaje.
 - `activity_send.xml`: interfaz de la pantalla de envío.
 - `activity_view.xml`: interfaz de la pantalla de visualización.
+- - `Person.kt`: representa al remitente y es serializable.
+- `Message.kt`: representa el mensaje y contiene un objeto `Person`.
 
 ## Depuración
 
