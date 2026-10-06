@@ -9,6 +9,8 @@ import android.widget.EditText
 import android.widget.Button
 import android.content.Intent
 import android.util.Log
+import com.example.sendmessage.model.Message
+import com.example.sendmessage.model.Person
 /**
  * Activity encargada de permitir al usuario introducir un mensaje
  * y enviarlo a ViewActivity.
@@ -16,20 +18,27 @@ import android.util.Log
 class SendActivity : AppCompatActivity() {
     companion object {
         private const val TAG = "SendActivity"
+        const val EXTRA_MESSAGE = "mensaje"
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_send)
         Log.d(TAG, "onCreate")
         val edtMensaje = findViewById<EditText>(R.id.edtMensaje)
+        val edtRemitente = findViewById<EditText>(R.id.edtRemitente)
         val btnSend = findViewById<Button>(R.id.btnSend)
         btnSend.setOnClickListener {
 
-            val mensaje = edtMensaje.text.toString()
+            val mensaje = Message(
+                text = edtMensaje.text.toString(),
+                sender = Person(
+                    name = edtRemitente.text.toString()
+                )
+            )
 
             val intent = Intent(this, ViewActivity::class.java)
 
-            intent.putExtra("mensaje", mensaje)
+            intent.putExtra(EXTRA_MESSAGE, mensaje)
 
             startActivity(intent)
         }
