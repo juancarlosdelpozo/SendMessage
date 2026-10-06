@@ -41,3 +41,17 @@ Se ha comprobado el ciclo de vida de las Activities mediante Logcat y se han uti
 ## Documentación
 
 El código está documentado mediante KDoc y la documentación técnica se genera mediante Dokka.
+
+## Capturas de pantalla
+
+### Pantalla de envío
+
+En esta pantalla el usuario introduce el nombre del remitente y el mensaje que desea enviar.
+
+![Pantalla de envío](screenshots/send_screen.png)
+
+### Pantalla de visualización
+
+La segunda pantalla recibe un objeto `Message` serializable que contiene el texto del mensaje y un objeto `Person` con los datos del remitente.
+
+![Pantalla de visualización](screenshots/view_screen.png)
