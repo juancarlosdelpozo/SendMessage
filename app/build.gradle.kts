@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.dokka)
+    alias(libs.plugins.kotlin.parcelize)
 }
 
 android {
@@ -41,4 +42,12 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(libs.androidx.junit)
+}
+
+dokka {
+    dokkaPublications.html {
+        outputDirectory.set(
+            rootProject.layout.projectDirectory.dir("docs")
+        )
+    }
 }

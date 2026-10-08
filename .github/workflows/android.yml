@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Set up JDK 17
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@v5
         with:
           java-version: '17'
           distribution: 'temurin'
@@ -27,5 +27,5 @@ jobs:
       - name: Give execute permission to Gradle
         run: chmod +x gradlew
 
-      - name: Build project
-        run: ./gradlew assembleDebug
+      - name: Test and build project
+        run: ./gradlew :app:testDebugUnitTest :app:assembleDebug :app:assembleDebugAndroidTest

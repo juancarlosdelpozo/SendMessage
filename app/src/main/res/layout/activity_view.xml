@@ -1,29 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="24dp">
-
-    <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:src="@drawable/ic_message"
-        android:contentDescription="@string/icono_mensaje" />
+    android:padding="@dimen/padding"
+    tools:context=".ViewActivity">
 
     <TextView
         android:id="@+id/txtRemitenteRecibido"
+        style="@style/MessageText"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="De:"
-        android:textSize="18sp" />
+        android:layout_height="wrap_content" />
 
     <TextView
         android:id="@+id/txtMensajeRecibido"
+        style="@style/MessageText"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/mensaje_recibido"
-        android:textSize="20sp" />
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/image_height"
+        android:importantForAccessibility="no"
+        app:srcCompat="@drawable/baseline_mark_chat_unread_24" />
 
 </LinearLayout>

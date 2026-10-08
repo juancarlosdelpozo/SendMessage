@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">SendMessage</string>
-    <string name="titulo_mensaje">Escribe un mensaje:</string>
-    <string name="hint_mensaje">Introduce tu mensaje</string>
-    <string name="enviar">Enviar</string>
+    <string name="user_msg">Escribe tu mensaje</string>
+    <string name="sender_prompt">Escribe el remitente</string>
+    <string name="sender_display">De: %1$s</string>
+    <string name="send_msg_button">Enviar mensaje</string>
     <string name="icono_mensaje">Icono de mensaje</string>
-    <string name="mensaje_recibido">Aquí aparecerá el mensaje</string>
 </resources>
